@@ -15,6 +15,10 @@ const images = [
 ];
 
 const galleryMarkup = images.reduce((acc, { url, alt }) => 
-  acc + `<li class="gallery__item"><img src="${url}" alt="${alt}" class="gallery__image"></li>`, '');
+  acc + `<li class="gallery__item"><img src="${url}" alt="${alt}" height = 250 class="gallery__image"></li>`, '');
 
 galleryList.insertAdjacentHTML('beforeend', galleryMarkup);
+galleryList.setAttribute("style", "list-style-type:none; display: flex; gap:8px; justify-content:center;");
+
+
+

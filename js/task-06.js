@@ -1,14 +1,13 @@
 const input = document.querySelector("#validation-input");
 
+const toggleValidityClass = (isValid) => {
+  input.classList.add(isValid ? "valid" : "invalid");
+  input.classList.remove(isValid ? "invalid" : "valid");
+};
+
 input.addEventListener("blur", () => {
   const length = input.getAttribute("data-length");
   const valueLength = input.value.length;
 
-  if (valueLength === parseInt(length)) {
-    input.classList.add("valid");
-    input.classList.remove("invalid");
-  } else {
-    input.classList.add("invalid");
-    input.classList.remove("valid");
-  }
+  toggleValidityClass(valueLength === parseInt(length));
 });
